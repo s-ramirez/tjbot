@@ -1,3 +1,4 @@
+"use strict";
 var fs = require('fs');
 // var tasks = require('./taskList');
 
@@ -11,6 +12,7 @@ class Tasks {
 
   add(newTask) {
     this.taskList.push(newTask);
+    saveList();
   }
 
   list() {
