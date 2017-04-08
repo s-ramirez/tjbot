@@ -7,32 +7,38 @@ const bodyParser = require('body-parser');
 const config = require('./config.json');
 
 var tasksCtrl = require('./controllers/tasks.controller.js');
+const ActionsCtrl = require('./controllers/actions.controller.js');
 
 /**** Initialize web server ****/
 console.log(chalk.green("[*] Starting Web Server..."));
 var app = express();
 var http = require('http').Server(app);
+var actionsCtrl = new ActionsCtrl();
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.get('/action', (req, res) => {
+app.get('/task', (req, res) => {
   messageHandler(req.query.message).then((result)=>{
     res.send(result);
   });
 });
 
-app.post('/action', function (req, res) {
+app.post('/task', function (req, res) {
+  var action = req.body.action;
+  var opts = req.body.opts;
+  
+  actionsCtrl.process(action);
+  res.send('succcess');
+});
+
+app.delete('/task', function (req, res) {
    console.log("Got a POST request for the homepage");
    res.send('Hello POST');
 })
 
-app.delete('/', function (req, res) {
-   console.log("Got a POST request for the homepage");
-   res.send('Hello POST');
-})
-
-app.get('/', function(req, res){
+app.get('/task', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 

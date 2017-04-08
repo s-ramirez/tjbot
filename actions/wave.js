@@ -8,7 +8,7 @@
 var waveinterval = 1500;
 var lightinterval = 500;
 
-var mincycle = 500;
+var mincycle = 1000;
 var maxcycle = 2300;
 var dutycycle = mincycle;
 
