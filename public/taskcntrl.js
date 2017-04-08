@@ -13,13 +13,13 @@ app.controller('tasksCtrl', function($scope, $http){
     },
     {
       "id": 1,
-      "action": "wave",
+      "action": "Dance",
       "options": {"opt1" : 1},
       "owner": "Melisa Carranza"
     },
     {
       "id": 2,
-      "action": "wave",
+      "action": "Wave",
       "options": {"opt1" : 1},
       "owner": "Alina Pacheco"
     }
@@ -33,7 +33,14 @@ app.controller('tasksCtrl', function($scope, $http){
   };
 
   $scope.deleteTask = function(id){
-    console.log("deleting task with id", id);
+
+    for (i in $scope.tasks) {
+      if ($scope.tasks[i].id == id){
+        ($scope.tasks).splice(i, 1);
+      }
+    };
+
+    // console.log("deleting task with id", id);
   };
 
 });

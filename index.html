@@ -57,8 +57,8 @@
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>Tasks</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">image</i>Photos</a>
+          <a class="mdl-navigation__link" href="#/tasks"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>Tasks</a>
+          <a class="mdl-navigation__link" href="#/photos"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">image</i>Photos</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">description</i>Scripts</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">attachment</i>Files</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">build</i>Settings</a>
@@ -67,22 +67,8 @@
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content" ng-controller="tasksCtrl" >
-
-            <!-- Cards  -->
-            <div class="demo-cards mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid" ng-repeat="task in tasks">
-              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                <h2 class="mdl-card__title-text">{{task.owner}}</h2>
-              </div>
-              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                {{task.action}}
-              </div>
-              <div class="mdl-card__actions mdl-card--border" align="right">
-                <a ng-click="deleteTask(1)" class="mdl-button mdl-js-button mdl-js-ripple-effect">Delete</a>
-              </div>
-            </div>
-            <!-- end cards -->
-
+        <div>
+          <div ui-view></div>
         </div>
       </main>
     </div>
@@ -90,4 +76,5 @@
   </body>
   <script src="main.js"></script>
   <script src="taskcntrl.js"></script>
+  <script src="photoscntrl.js"></script>
 </html>

@@ -6,7 +6,13 @@ angular.module('tjBot', ['ui.router'])
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('home', {
-    url: '/',
-    controller: 'tasksCtrl'
+    url: '/tasks',
+    controller: 'tasksCtrl',
+    templateUrl: 'tasks.html'
+  })
+  .state('photos', {
+    url: '/photos',
+    controller: 'photosCtrl',
+    templateUrl: 'photos.html'
   });
 })
