@@ -27,14 +27,15 @@ class Actions {
     };
   }
 
-  process(command, opts){
-    switch(command){
+  process(command){
+	console.log(chalk.blue('[*] Executing command ' + command.action));
+    switch(command.action){
       case "wave":
         this.speak("Ok, I will wave my arm. Just for you.");
         this.execute('wave');
       break;
       case "say":
-		this.speak(opts);
+		this.speak(command.opts);
       break;
       case "dance":
 		this.execute('dance');
@@ -49,6 +50,7 @@ class Actions {
 		this.speak("Hi. my name is Watson. I'm here to show you a little bit of what I can do. I'm a doctor. I'm a chef. I can design clothes. I'm the best DJ and Jeopardy player... Oh, and I like waffles and puppies.")
 	  break;
 	  default:
+		this.speak("I'm sorry, I don't understand that");
 	  break;
     }
   }
