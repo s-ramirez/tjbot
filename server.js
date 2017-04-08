@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 
 const config = require('./config.json');
 
-var tasksCtrl = require('./controllers/tasks.controller.js');
+var TasksCtrl = require('./controllers/tasks.controller.js');
+
+/**** Initialize task queue ****/
+var tasksCtrl = new TasksCtrl();
 
 /**** Initialize web server ****/
 console.log(chalk.green("[*] Starting Web Server..."));
@@ -62,3 +65,9 @@ process.on('SIGINT', ()=> {
   console.log(chalk.red("\n[*] Terminating..."));
   process.exit();
 });
+
+// tasksCtrl.add({"action":"led", "opts":{}, "owner":"gandalf"});
+// console.log(tasksCtrl.next());
+// console.log(tasksCtrl.list());
+// console.log(tasksCtrl.get(5));
+// tasksCtrl.delete(5);
