@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const config = require('./config.json');
 
-var tasksCtrl = require('./controllers/task.controller.js');
+var tasksCtrl = require('./controllers/tasks.controller.js');
 
 /**** Initialize web server ****/
 console.log(chalk.green("[*] Starting Web Server..."));

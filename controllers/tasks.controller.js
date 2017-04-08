@@ -1,21 +1,24 @@
 class Tasks {
+  constructor() {
+
+  }
   add() {
     // agregar uno a la lista
   }
 
-  list {
+  list() {
     // retornar todas las tasks
   }
 
-  next {
+  next() {
     // obtener el siguiente task
   }
 
-  get = function(id) {
+  get(id) {
     // obtener el task con id
   }
 
-  delete = function(id) {
+  delete(id) {
     // eliminar el task con id
   }
 }
