@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "action": "wave",
+    "options": {"opt1" : 1},
+    "owner": "seraro"
+  },
+  {
+    "id": 1,
+    "action": "wave",
+    "options": {"opt1" : 1},
+    "owner": "mecazu"
+  },
+  {
+    "id": 2,
+    "action": "wave",
+    "options": {"opt1" : 1},
+    "owner": "aparo"
+  }
+]
