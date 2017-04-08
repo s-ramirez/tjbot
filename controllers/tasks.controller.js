@@ -1,19 +1,21 @@
-exports.add = function() {
-  // agregar uno a la lista
-}
+class Tasks {
+  add() {
+    // agregar uno a la lista
+  }
 
-exports.list = function() {
-  // retornar todas las tasks
-}
+  list {
+    // retornar todas las tasks
+  }
 
-exports.next = function() {
-  // obtener el siguiente task
-}
+  next {
+    // obtener el siguiente task
+  }
 
-exports.get = function(id) {
-  // obtener el task con id
-}
+  get = function(id) {
+    // obtener el task con id
+  }
 
-exports.delete = function(id) {
-  // eliminar el task con id
+  delete = function(id) {
+    // eliminar el task con id
+  }
 }
