@@ -1,24 +1,45 @@
-class Tasks {
-  constructor() {
+var fs = require('fs');
+// var tasks = require('./taskList');
 
+class Tasks {
+
+  constructor(){
+    this.taskList = tasks;
+    this.lastId = taskList[taskList.length - 1].id;
+    console.log(this.taskList);
   }
-  add() {
-    // agregar uno a la lista
+
+  add(newTask) {
+    this.taskList.push(newTask);
   }
 
   list() {
-    // retornar todas las tasks
+    return this.taskList;
   }
 
   next() {
-    // obtener el siguiente task
+    var next = this.taskList[0];
+    this.taskList.remove(0);
+    saveList();
+    return this.taskList[0];
   }
 
   get(id) {
-    // obtener el task con id
+    var index = taskList.map(function(e) { return e.id; }).indexOf(id);
+    return taskList[id];
   }
 
   delete(id) {
-    // eliminar el task con id
+    var index = taskList.map(function(e) { return e.id; }).indexOf(id);
+    taskList.remove(index);
+    saveList();
+  }
+
+  saveList() {
+    newTasklist = JSON.stringify(taskList,null,'\t');
+    fs.writeFile('./taskList.json',string,function(err) {
+      if(err) return console.error(err);
+      console.log('done');
+    });
   }
 }
