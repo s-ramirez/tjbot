@@ -1,0 +1,11 @@
+{
+  "IVONA":{
+    "ACCESS_KEY": "",
+    "SECRET_KEY": "",
+    "VOICE" :  {
+      "name": "Brian",
+      "language": "en-GB",
+      "gender": "Male"
+    }
+  }
+}
